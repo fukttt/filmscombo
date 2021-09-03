@@ -6,19 +6,19 @@
 
 Small Electron app that allows you to watch movies, serials and anime.
 
-# feautures 
+# Feautures 
 
 * Search ![screenshot](img/screen3.PNG)
 * First 20 items from cloud ![screenshot](img/screen1.png)
 * Online browsing with history saving ![screenshot](img/screen2.PNG)
 
-# about
+# About
 
 * Saves the time you left off.
 
 * Search by film-name.
 
-# Установка 
+# Installation
 
 Download [release](https://github.com/fukttt/nnmgui/releases)
 
