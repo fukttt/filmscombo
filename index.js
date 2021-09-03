@@ -17,7 +17,7 @@ function createWindow() {
       width: 900,
       height: 600,
       frame: false,
-      icon: 'img/popcorn.png',
+      icon: './icon.ico',
       hasShadow: true,
       autoHideMenuBar: true,
       webPreferences: {

@@ -4,14 +4,14 @@ var electronInstaller = require('electron-winstaller');
 // In this case, we can use relative paths
 var settings = {
     // Specify the folder where the built app is located
-    appDirectory: './myapp-win32-x64',
+    appDirectory: './FilmsCombo-win32-x64',
     // Specify the existing folder where 
-    outputDirectory: './myapp-source-built-installers',
+    outputDirectory: './FilmsCombo-setup',
     // The name of the Author of the app (the name of your company)
     authors: 'Our Code World Inc.',
     description: 'Some desc',
     // The name of the executable of your built
-    exe: './myapp.exe'
+    exe: './FilmsCombo.exe'
 };
 
 resultPromise = electronInstaller.createWindowsInstaller(settings);
