@@ -7,9 +7,9 @@
 
 # Фичи 
 
-* Поиск ![screenshot](img/screen3.PNG)
-* Первые 20 фильмов в базе ![screenshot](img/screen1.png)
-* Онлайн-просмотр с сохранением истории ![screenshot](img/screen2.PNG)
+* Поиск ![screenshot](screen3.PNG)
+* Первые 20 фильмов в базе ![screenshot](screen1.png)
+* Онлайн-просмотр с сохранением истории ![screenshot](screen2.PNG)
 
 # О программе 
 
