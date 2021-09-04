@@ -6,7 +6,7 @@
 html, body{
     overflow-x:hidden;
     overflow-y:visible;
-    background-color: #31315d;
+    background-color: #212f45;  
 }
 .minimize{
     cursor: pointer;
@@ -21,7 +21,7 @@ html, body{
     position: fixed;
     display: flex;
     width: 100vw;
-    background-color: rgb(53, 52, 52);
+    background-color: #3a0ca3;
     height: 35px;
     max-width: 100vw;
     align-items: center;
@@ -94,12 +94,13 @@ html, body{
     }
     .tally__line,
     .tally__path {
-        stroke: white;
+        stroke: #822faf;
     }
     .tally-wrapper{
         text-align: center;
         position: absolute;
-        top:10%;
+        top:30%;
+        left:calc(50% - 5em);
     }
     .modal{
         z-index: 1100;
@@ -109,5 +110,32 @@ html, body{
         -webkit-app-region:drag;
     }
     .active-nav{
-        color:#0d6efd!important;
+        color:#6d23b6!important;
+    }
+    #main-content input {
+        background: transparent;
+        border: 2px solid #822faf;
+        color:white;
+        font-weight: 700;
+    }
+    #main-content input::placeholder{
+        color:white;
+    }
+    .btn-filmery{
+        background-color: #822faf;
+        color: white;
+    }
+    .btn-filmery:hover{
+        color:white; 
+        transform: scale(1.2);
+        transition: 1s;
+    }
+    .text-filmery{
+        color:#6c757d;
+    }
+    .image-filmery{
+        border-radius: 8px;
+        -webkit-box-shadow: 4px 3px 6px 0px rgba(34, 60, 80, 0.59);
+        -moz-box-shadow: 4px 3px 6px 0px rgba(34, 60, 80, 0.59);
+        box-shadow: 4px 3px 6px 0px rgba(34, 60, 80, 0.59);
     }

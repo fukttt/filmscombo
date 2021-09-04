@@ -3,10 +3,10 @@ const {shell} = require('electron');
 const ipc = electron.ipcRenderer;
 const axios = require('axios');
 
-
+global.pageNow = 1;
 async function getFilms(page,query, type) {
     
-    var req = axios.get('https://videocdn.tv/api/'+type+'?api_token=jvbY6usny3y4hgcEvc51TPNunRRsPMms&ordering=created&direction=desc&page='+page + '&query=' + query).then((response)=>{
+    var req = axios.get('https://videocdn.tv/api/'+type+'?api_token=jvbY6usny3y4hgcEvc51TPNunRRsPMms&ordering=created&direction=asc&page='+page + '&query=' + query).then((response)=>{
         var json = response.data;
         document.querySelector('.films-block').innerHTML = "";
         document.querySelector('.tally-wrapper').style.display = 'block';
@@ -18,7 +18,7 @@ async function getFilms(page,query, type) {
             var filmname = document.createElement('b');
             var filmwatch = document.createElement('button');
             filmwatch.classList.add('btn');
-            filmwatch.classList.add('btn-primary');
+            filmwatch.classList.add('btn-filmery');
             filmwatch.innerHTML = '<i class="bi bi-play"></i>';
             filmwatch.setAttribute('onclick', 'OpenFilm(this)');
             let src = entry.iframe_src;
@@ -29,6 +29,7 @@ async function getFilms(page,query, type) {
             filmname.innerText = entry.ru_title  ;
             filmname.className = 'text-white';
             image.setAttribute('src', 'https://st.kp.yandex.net/images/sm_film/'+entry.kinopoisk_id+'.jpg')
+            image.className = 'image-filmery'
             filmdiv.append(image);
             filmdiv.append(filmname);
             filmdiv.append(filmwatch);
@@ -40,6 +41,39 @@ async function getFilms(page,query, type) {
         document.querySelector('.tally-wrapper').style.display = 'none';
     });
   }
+
+  function prev(){
+      
+      if (global.pageNow > 1){
+        global.pageNow -= 1;
+        if (document.location.href.includes('series.html')){
+            getFilms(global.pageNow, '', 'tv-series')
+        }
+        if (document.location.href.includes('index.html')){
+        getFilms(global.pageNow, '', 'movies')
+        }
+        if (document.location.href.includes('anime.html')){
+        getFilms(global.pageNow, '', 'animes')
+        }
+        document.querySelector('#nowpage').innerText = global.pageNow;
+      }
+      
+      
+  }
+
+  function next(){
+    global.pageNow += 1;
+    if (document.location.href.includes('series.html')){
+      getFilms(global.pageNow, '', 'tv-series')
+    }
+    if (document.location.href.includes('index.html')){
+      getFilms(global.pageNow, '', 'movies')
+    }
+    if (document.location.href.includes('anime.html')){
+      getFilms(global.pageNow, '', 'animes')
+    }
+    document.querySelector('#nowpage').innerText = global.pageNow;
+}
 
   function openBrowser(url, ev){
     ev.preventDefault();
