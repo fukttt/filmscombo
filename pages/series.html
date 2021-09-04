@@ -26,7 +26,7 @@
    
     <div class="container-fluid " style="padding-top: 35px;">
       <div class="row">
-          <div class="col-sm-auto bg-light sticky-top bg-dark">
+        <div class="col-sm-auto bg-dark" id='navfilmery'>
               <div class="d-flex flex-sm-column flex-row flex-nowrap bg-dark align-items-center sticky-top">
                   
                   <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
@@ -59,7 +59,7 @@
                   </ul>
               </div>
           </div>
-          <div class="col-sm p-3 min-vh-100" >
+          <div class="col-sm p-3 min-vh-100" id="contfilmery">
               <!-- content -->
               <div class="tally-wrapper">
 
@@ -191,43 +191,43 @@
                     </line>
                 </svg>
             </div>
-              <div class="row" id="main-content">
-                <div class="mb-3">
-                    <input type="text" class="form-control text-black" id="search" placeholder="Поиск">
+            <div class="container-fluid" id="main-content" style="height: 100%;">
+                <div class="row filmname" style="display: none;">
+                    <div class="col-md-2">
+                        <a href="./series.html" class="btn btn-filmery">&laquo;</a>
+                    </div>
+                    <div class="col-md-10">
+                        <h1 class="text-white"></h1>
+                    </div>
                 </div>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center" style="font-weight:600;">
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous" onclick="prev()">
-                          <span aria-hidden="true">&laquo;</span>
-                        </a>
-                      </li>
-                      <li class="page-item"><a class="page-link" href="#" id="nowpage">1</a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next" onclick="next()">
-                          <span aria-hidden="true">&raquo;</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
-                <div class="films-block mb-2">
+
+                <div class="row" id="searchpane" style="width: 100%;">
+                    <div class="search col-md-4">
+                        <input type="text" class="form-control text-black" id="search" placeholder="Поиск">
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <ul class="pagination justify-content-center" style="font-weight:600;">
+                            <li class="page-item">
+                              <a class="page-link" href="#" aria-label="Previous" onclick="prev()">
+                                <span aria-hidden="true">&laquo;</span>
+                              </a>
+                            </li>
+                            <li class="page-item"  style="background-color:#822faf;"><a class="page-link" id="nowpage">1</a></li>
+                            <li class="page-item">
+                              <a class="page-link" href="#" aria-label="Next" onclick="next()">
+                                <span aria-hidden="true">&raquo;</span>
+                              </a>
+                            </li>
+                          </ul>
+                    </div>
+                        
+                </div>
+                
+                <div class="films-block mb-2" style="height:75%;">
 
                 </div>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center" style="font-weight:600;">
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous" onclick="prev()">
-                          <span aria-hidden="true">&laquo;</span>
-                        </a>
-                      </li>
-                      <li class="page-item"><a class="page-link" href="#" id="nowpage">1</a></li>
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next" onclick="next()">
-                          <span aria-hidden="true">&raquo;</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
+                
               </div>
           </div>
       </div>

@@ -24,8 +24,6 @@ async function getFilms(page,query, type) {
             let src = entry.iframe_src;
             filmwatch.dataset.frame =  src.replace("//", "https://");
             filmwatch.dataset.name =  entry.ru_title;
-            filmwatch.dataset.bsToggle =  "modal";
-            filmwatch.dataset.bsTarget =  "#exampleModal";
             filmname.innerText = entry.ru_title  ;
             filmname.className = 'text-white';
             image.setAttribute('src', 'https://st.kp.yandex.net/images/sm_film/'+entry.kinopoisk_id+'.jpg')
@@ -82,8 +80,11 @@ async function getFilms(page,query, type) {
 
 function OpenFilm(e){
 
-    document.querySelector('#exampleModal .modal-body').innerHTML = "<iframe src=\""+e.dataset.frame+"\" width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen></iframe>";
-    document.querySelector('#exampleModal .modal-title').innerHTML = '<b>'+e.dataset.name + '</b>';
+    document.querySelector('#main-content .films-block').innerHTML = "<iframe src=\""+e.dataset.frame+"\" width=\"100%\" height=\"100%\" frameborder=\"0\" allowfullscreen></iframe>";
+    //document.querySelector('#exampleModal .modal-title').innerHTML = '<b>'+e.dataset.name + '</b>';
+    document.querySelector('.filmname h1').innerText = e.dataset.name;
+    document.querySelector('.filmname').style.display = 'flex';
+    document.querySelector('#searchpane').style.display = 'none ';  
 }
 
 
@@ -124,4 +125,37 @@ document.addEventListener('DOMContentLoaded', () => {
     myModal.addEventListener('hide.bs.modal', function () {
         document.querySelector('#exampleModal .modal-body').innerHTML = ""
     }) 
+
+
+    var startProductBarPos=-1;
+    window.onscroll=function(){
+    var bar = document.getElementById('searchpane');
+    if(startProductBarPos<0)startProductBarPos=findPosY(bar);
+
+        if(pageYOffset>startProductBarPos){
+            bar.style.position='fixed';
+            bar.style.top='35px';
+            bar.style.backgroundColor ='#212f45';
+            bar.style.paddingTop = '20px';
+        }else{
+            bar.style.position='relative';
+            bar.style.top=0;
+            bar.style.paddingTop = 0;
+        } 
+        
+    };
+
+    function findPosY(obj) {
+    var curtop = 0;
+    if (typeof (obj.offsetParent) != 'undefined' && obj.offsetParent) {
+        while (obj.offsetParent) {
+        curtop += obj.offsetTop;
+        obj = obj.offsetParent;
+        }
+        curtop += obj.offsetTop;
+    }
+    else if (obj.y)
+        curtop += obj.y;
+    return curtop;
+    }
 });

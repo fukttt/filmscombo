@@ -7,6 +7,7 @@ html, body{
     overflow-x:hidden;
     overflow-y:visible;
     background-color: #212f45;  
+    scroll-behavior:smooth;
 }
 .minimize{
     cursor: pointer;
@@ -22,7 +23,7 @@ html, body{
     display: flex;
     width: 100vw;
     background-color: #3a0ca3;
-    height: 35px;
+    height: 40px;
     max-width: 100vw;
     align-items: center;
     justify-content: space-between;
@@ -112,6 +113,9 @@ html, body{
     .active-nav{
         color:#6d23b6!important;
     }
+    #main-content{
+        scroll-behavior: smooth;
+    }
     #main-content input {
         background: transparent;
         border: 2px solid #822faf;
@@ -138,4 +142,27 @@ html, body{
         -webkit-box-shadow: 4px 3px 6px 0px rgba(34, 60, 80, 0.59);
         -moz-box-shadow: 4px 3px 6px 0px rgba(34, 60, 80, 0.59);
         box-shadow: 4px 3px 6px 0px rgba(34, 60, 80, 0.59);
+    }
+    .page-link{
+        background-color: transparent;
+        border-color: #822faf;
+        color: white;
+        padding: 7px 15px;
+        border-width: 2px;
+    }
+    .page-link:hover{
+        color:white;
+        background-color: transparent;
+        border-color: #822faf;
+    }
+    .page-link:focus{
+        background-color: transparent;
+        color: white;
+    }
+    #navfilmery{
+        position: fixed;
+        height: 100vh;
+    }
+    #contfilmery{
+        margin-left:80px;
     }
