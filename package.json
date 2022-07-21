@@ -15,6 +15,12 @@
     "appId": "com.electron.${name}",
     "mac": {
       "category": "public.app-category.video"
+    },
+    "linux": {
+      "icon": "img/fav-2.png",
+      "target": [
+        "deb"
+      ]
     }
   },
   "devDependencies": {
