@@ -14,11 +14,7 @@
   "build": {
     "appId": "com.electron.${name}",
     "mac": {
-      "icon": "img/icon.icns",
       "category": "public.app-category.video"
-    },
-    "win": {
-      "icon": "img/icon.ico"
     }
   },
   "devDependencies": {
