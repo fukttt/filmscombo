@@ -2,7 +2,7 @@
   "name": "FilmsCombo",
   "version": "1.0.1",
 
-  "description": "Online cinema player.",
+  "description": "Online cinema player",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
