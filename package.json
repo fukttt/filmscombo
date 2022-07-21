@@ -9,7 +9,11 @@
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
   },
-  "author": "fukttt",
+  "author": {
+    "name": "fukttt",
+    "email": "maksorov@ya.ru",
+    "url": "https://fcombo.ru"
+  },
   "license": "ISC",
   "build": {
     "appId": "com.electron.${name}",
