@@ -2,7 +2,7 @@
   "name": "FilmsCombo",
   "version": "1.0.1",
 
-  "description": "Смотри фильмы, сериалы, аниме в удобном приложении на своем компьютере!",
+  "description": "Online cinema player.",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
@@ -16,7 +16,7 @@
   },
   "license": "ISC",
   "build": {
-    "appId": "com.electron.${name}",
+    "appId": "com.electron.filmscombo",
     "mac": {
       "category": "public.app-category.video"
     },
