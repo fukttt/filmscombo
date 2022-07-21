@@ -1,13 +1,26 @@
 {
-  "name": "electron-app",
-  "version": "1.0.0",
-  "description": "",
+  "name": "FilmsCombo",
+  "version": "1.0.1",
+
+  "description": "Смотри фильмы, сериалы, аниме в удобном приложении на своем компьютере!",
   "main": "index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
-  "author": "",
+  "author": "fukttt",
   "license": "ISC",
+  "build": {
+    "appId": "com.electron.${name}",
+    "mac": {
+      "icon": "img/icon.icns",
+      "category": "public.app-category.video"
+    },
+    "win": {
+      "icon": "img/icon.ico"
+    }
+  },
   "devDependencies": {
     "electron": "^14.0.0",
     "electron-builder": "^23.1.0",
